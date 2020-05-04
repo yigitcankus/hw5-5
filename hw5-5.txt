@@ -1,0 +1,32 @@
+Question 1: Maximum kredi limiti nedir? Hangi müsteriye ait?
+
+SELECT creditLimit,customerName
+
+FROM customers
+where creditLimit=(select max(creditLimit) from customers)
+
+
+(baska yoldan nasil yapabiliriz?)
+
+###############################################################
+
+Question 2:Her ülkeden kaç müsteri var?
+
+SELECT country,count(*)
+
+FROM customers
+
+group by country
+;
+
+#############################################################
+
+Question 3:En az siparis veren müsteri numarasi ve 
+siparis sayisi nedir (orders tablosundan)?
+
+SELECT customerNumber, count(*)
+
+FROM orders
+
+group by customerNumber
+;
